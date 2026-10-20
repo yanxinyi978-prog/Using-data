@@ -9,15 +9,16 @@ Papa.parse("data.csv", {
   skipEmptyLines: true,
 
   complete: function(results) {
-    allData = results.data;
+  allData = results.data;
 
-    populateFilter();
-    drawPage(allData);
+  populateFilter();
 
-    yearFilter.disabled = false;
-    yearFilter.addEventListener("change", filterData);
-  },
+  yearFilter.disabled = false;
+  yearFilter.addEventListener("change", filterData);
 
+  drawPage(allData);
+ }
+  
   error: function(error) {
     document.getElementById("status").textContent =
       "Could not load data.csv.";
