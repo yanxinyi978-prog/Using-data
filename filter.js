@@ -26,12 +26,11 @@ Papa.parse("data.csv", {
   }
 });
 
-// Read the year from dates such as 2025/10/19 or 2025-10-19.
 function getYear(row) {
   return row.week.trim().slice(0, 4);
 }
 
-// Create one option for each year in the data.
+
 function populateFilter() {
   const years = [];
 
@@ -53,7 +52,7 @@ function populateFilter() {
   });
 }
 
-// Select the rows that match the chosen year.
+
 function filterData() {
   const selectedYear = yearFilter.value;
 
@@ -65,11 +64,10 @@ function filterData() {
   drawPage(filteredData);
 }
 
-// Update both the table and the chart.
 function drawPage(data) {
   const tbody = document.querySelector("#dataTable tbody");
 
-  // Remove the previous table rows before adding new ones.
+
   tbody.innerHTML = "";
 
   const labels = [];
@@ -101,7 +99,6 @@ function drawPage(data) {
     return;
   }
 
-  // Remove the previous chart before drawing the updated one.
   if (chart !== null) {
     chart.destroy();
   }
