@@ -8,8 +8,9 @@
 
   <link rel="stylesheet" href="style.css">
 
-  <script src="https://cdn.jsdelivr.net/npm/papaparse@5.4.1/papaparse.min.js" defer></script>
-  <script src="script.js" defer></script>
+<script src="https://cdn.jsdelivr.net/npm/papaparse@5.4.1/papaparse.min.js" defer></script>
+<script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.8/dist/chart.umd.min.js" defer></script>
+<script src="script.js" defer></script>
 </head>
 
 <body>
@@ -27,6 +28,19 @@
 
     <p id="status">Loading data...</p>
 
+    <h2>Search interest over time</h2>
+
+    <div class="chart-container">
+    <canvas
+    id="interestChart"
+    role="img"
+    aria-label="Line chart of weekly TikTok search interest in the UK. The data is also available in the table below."></canvas>
+    </div>
+
+    <h2>Weekly data</h2>
+
+
+    
     <table id="dataTable">
       <thead>
         <tr>
