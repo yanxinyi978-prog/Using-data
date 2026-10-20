@@ -49,3 +49,14 @@ tbody tr:hover {
 a {
   color: #175a91;
 }
+
+.chart-container {
+  position: relative;
+  height: 350px;
+  margin: 20px 0 35px;
+}
+
+h2 {
+  margin-top: 30px;
+  color: #20364d;
+}
