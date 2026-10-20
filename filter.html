@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>TikTok Data Filter</title>
+
+  <link rel="stylesheet" href="style.css">
+
+  <script src="https://cdn.jsdelivr.net/npm/papaparse@5.4.1/papaparse.min.js" defer></script>
+  <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.8/dist/chart.umd.min.js" defer></script>
+  <script src="filter.js" defer></script>
+</head>
+
+<body>
+  <main>
+    <h1>TikTok Search Interest in the UK</h1>
+
+    <p>
+      Explore weekly search interest in TikTok.
+      These values represent relative interest, not user numbers.
+    </p>
+
+    <label for="yearFilter">Filter by year:</label>
+    <select id="yearFilter" disabled>
+      <option value="all">All years</option>
+    </select>
+
+    <p id="status" role="status">Loading data...</p>
+
+    <h2>Search interest over time</h2>
+
+    <div class="chart-container">
+      <canvas
+        id="interestChart"
+        role="img"
+        aria-label="TikTok search interest for the selected year. Values are provided in the table below."
+      ></canvas>
+    </div>
+
+    <h2>Weekly data</h2>
+
+    <table id="dataTable">
+      <thead>
+        <tr>
+          <th scope="col">Week</th>
+          <th scope="col">Search interest</th>
+        </tr>
+      </thead>
+      <tbody></tbody>
+    </table>
+
+    <p>
+      Source:
+      <a href="https://trends.google.com/">Google Trends</a>
+    </p>
+
+    <p><a href="index.html">Back to the original page</a></p>
+  </main>
+</body>
+</html>
