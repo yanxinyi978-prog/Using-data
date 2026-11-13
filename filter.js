@@ -17,7 +17,7 @@ Papa.parse("data.csv", {
   yearFilter.addEventListener("change", filterData);
 
   drawPage(allData);
- }
+ }，
   
   error: function(error) {
     document.getElementById("status").textContent =
