@@ -3,51 +3,34 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-  <title>TikTok Search Interest</title>
-
+  <title>TikTok Search Interest in the UK</title>
   <link rel="stylesheet" href="style.css">
-
-<script src="https://cdn.jsdelivr.net/npm/papaparse@5.4.1/papaparse.min.js" defer></script>
-<script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.8/dist/chart.umd.min.js" defer></script>
-<script src="filter.js" defer></script>   
+  <script src="https://cdn.jsdelivr.net/npm/papaparse@5.4.1/papaparse.min.js" defer></script>
+  <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.8/dist/chart.umd.min.js" defer></script>
+  <script src="filter.js" defer></script>
 </head>
-
 <body>
   <main>
     <h1>TikTok Search Interest in the UK</h1>
+    <p>Weekly Google search interest in TikTok in the United Kingdom, from October 2025 to October 2026.</p>
+    <p>The values represent relative search interest, not the number of searches or TikTok users.</p>
 
-    <p>
-      This table shows the weekly Google search interest in TikTok in the United Kingdom from October 2025 to October 2026.
-    </p>
-
-    <p>
-      The values represent relative search interest,
-      not the number of searches or TikTok users.
-    </p>
-
-    <p id="status">Loading data...</p>
+    <div class="filter-controls">
+      <label for="yearFilter">Filter by year:</label>
+      <select id="yearFilter" disabled>
+        <option value="all">All years</option>
+      </select>
+    </div>
+    <p id="status" role="status">Loading data...</p>
+    <noscript>Please enable JavaScript to view the chart and table.</noscript>
 
     <h2>Search interest over time</h2>
-
+    <p id="chartMessage" role="status"></p>
     <div class="chart-container">
-    <canvas
-    id="interestChart"
-    role="img"
-    aria-label="Line chart of weekly TikTok search interest in the UK. The data is also available in the table below."></canvas>
+      <canvas id="interestChart" role="img" aria-label="Weekly TikTok search interest. Exact values are listed in the table below."></canvas>
     </div>
-  
-    <label for="yearFilter">Filter by year:</label>
-    <select id="yearFilter" disabled>
-      <option value="all">All years</option>
-    </select>
 
-
-    
     <h2>Weekly data</h2>
-    
-
-
     <table id="dataTable">
       <thead>
         <tr>
@@ -55,14 +38,11 @@
           <th scope="col">Search interest</th>
         </tr>
       </thead>
-
-      <tbody>
-      </tbody>
+      <tbody></tbody>
     </table>
 
-    <p>
-      Data source:
-      <a href="https://trends.google.com/">Google Trends</a>
+    <p class="source">Data source: <a href="https://trends.google.com/">Google Trends</a>.
+      <a href="data.csv" download>Download the full CSV</a>.
     </p>
   </main>
 </body>
